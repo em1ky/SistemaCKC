@@ -1,0 +1,323 @@
+:root {
+    --card: #1D1F3A;
+    --stroke-card: #FFFFFF;
+    --botao: #0033C1;
+
+}
+
+
+main {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; 
+    background-image: url(/sistemackc/views/Img/ImgTelas/cadastroUsuario.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    opacity: 0.5; 
+    filter: grayscale(100%) brightness(10%);
+    z-index: -1; 
+}
+
+.container-feedback {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    align-items: center;
+    gap: 2rem;
+    width: 80%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 4rem 0;
+    padding: 2rem;
+}
+
+.infoDeComeco{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+form{
+    display: flex;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+}
+
+.containerFiltros,
+.filtro_ano, 
+.filtro_dia, 
+.filtro_mes, 
+.filtro_campeonato{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.containerFiltros {
+    gap: 3rem;
+}
+
+form label{
+    font-weight: 500;
+    color: white;
+}
+
+option[disabled] {
+    color:#00000060;
+    background-color: #8b8787;
+    cursor: not-allowed;
+}
+
+input, 
+select.buscaSelect{
+    max-width: 260px;
+    font-family: var(--fonte-title);
+    font-size: 1.3rem;
+    font-weight: 500;
+    background-color: white;
+    border-color: var(--color-menu);
+    border-width: 1px;
+    border-radius: 10px;
+    color: black;
+    letter-spacing: 1.2px;
+}
+
+input,
+button {
+    width: 260px;
+}
+
+select.buscaSelect{
+    padding: 1.3rem;
+}
+
+select option{
+    height: 1rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    border-width: 1px;
+    border-radius: 10px;
+    color: black;
+    background-color: rgb(220, 220, 220);
+}
+
+select.buscaSelect option:checked,
+input::placeholder{
+    color: black; 
+}
+
+input:focus::placeholder {
+    color: rgb(179, 179, 179); 
+}
+
+button.bt_filtrar{
+    max-width: 260px;
+    background-color: var(--color-button); 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+article.card {
+    display: flex;
+    width: 250px;
+    padding: 3rem;
+    margin: .7rem;
+    height: 390px;
+    margin-bottom: 3rem;
+    border: solid;
+    border-color: var(--stroke-card);
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--card);
+    gap: 3rem;
+}
+
+.time i{
+    margin: 0 .8rem;
+}
+
+.btn-verResultado {
+    padding: 1.3rem;
+    width: 180px;
+    margin-top: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    background-color: var(--color-button);   
+    color: var(--text-base-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-verResultado:hover,
+button.bt_filtrar:hover {
+    color: var(--background-campos);
+    background-color: var(--text-base-light);
+}
+
+@media (min-width: 375px) {
+    form{
+        margin: 4rem 0;
+    }
+    
+    .containerFiltros {
+        gap: 3rem;
+    }
+    
+    .filtro_ano,
+    .filtro_ano input, 
+    select.buscaSelect,
+    button.bt_filtrar {
+        width: 260px;
+    }
+
+    button {
+        width: 282px;
+    }
+
+    button.bt_filtrar {
+        margin: 2rem 0;
+    }
+}
+
+@media (min-width: 425px) {
+    .infoDeComeco h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .infoDeComeco h1 {
+        font-size: 3.5rem;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 4rem 0;
+        padding: 2rem;
+    }
+    
+    .infoDeComeco{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .containerFiltros{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 5rem;
+        padding: 2rem;
+    }
+    
+    input, 
+    select.buscaSelect,
+    button.bt_filtrar{
+        font-size: 1.5rem;
+    }
+
+    select option{
+        height: 1rem;
+        font-size: 1.6rem;
+    }
+    
+    button {
+        width: 260px;
+    }
+
+    input{
+        width: 170px;
+    }
+      
+    .containerCards {
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 5rem;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .infoDeComeco h1 {
+        font-size: 4rem;
+    }
+
+    .infoDeComeco p{
+        font-size: 2rem;
+    }
+
+    .containerFiltros{
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+
+}
+
+@media (min-width: 1300px) {
+    .infoDeComeco h1 {
+        font-size: 4rem;
+    }
+
+    .infoDeComeco p{
+        font-size: 2rem;
+    }
+
+    .containerFiltros {
+        gap: 30px;
+    }
+
+    .filtro_campeonato {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 0;
+    }
+
+    .filtro_dia,
+    .filtro_mes {
+        flex-basis: 0;
+    }
+}
+
+@media (min-width: 1440px) {
+    button.bt_filtrar{
+        margin: 0;
+    }
+}
+
+@media (min-width: 1800px) {
+    .containerFiltros {
+        gap: 45px;
+        padding: 5rem;
+        margin: 0 8rem;
+    }
+
+    button.bt_filtrar{
+        margin: 0;
+    }
+    
+}
+
+

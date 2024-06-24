@@ -1,0 +1,534 @@
+* {
+    /*todos os elenentos da pagina(zerando as medidas padrão do navegador)*/
+    margin: 0;
+    /*espaço a redor 'margem' das caixas*/
+    padding: 0;
+    /*preenchimento interno das caixas*/
+    box-sizing: border-box;
+    /*resetar a caixa para que ela possa fazer calculos da borda*/
+    -webkit-font-smoothing: antialiased;
+    /*serve para deixar a fonte menos groceira no navegador chrome esafari*/
+    -moz-osx-font-smoothing: grayscale;
+    /*serve para deixar a fonte menos groceira no navegador firefox*/
+}
+
+:root {
+    font-size: 62.5%;
+
+    --background-principal: #1E1A18;
+    /*COR CERTA -> #1E1A18*/
+    --bacground-adm:#D9D9D9;
+    --text-base-light: #fff;
+    --text-adm-black: #000;
+    /* COR CERTA -> #fff */
+    --color-button: #0033C1;
+    --background-navbar: #232121;
+    --background-campos: #232121;
+    /*COR CERTA -> #232121*/
+    --fonte-title: "Chakra Petch", sans-serif;
+    --color-menu: #0033C1;
+    --notificacao-exclamacao: #e9bd0c;
+
+    --categoria-ddl-livre: #069B0C;
+    --categoria-ckc-95: #B5CC18;
+    --categoria-ckc-110: #CC5918;
+    --color-cmp: #eb3838;
+    --background-cards: rgba(192, 192, 192, 0.15);
+    --background-tabelas-adm:#FFFBFA;
+    --tabelas-colunas-adm:rgb(0, 51, 193, 29%);
+    --background-button-red:#730202;
+}
+
+body {
+    background-color: var(--background-principal);
+    color: var(--text-base-light);
+    font-size: 1.6rem;
+    font-family: var(--fonte-title);
+    font-weight: 300;
+}
+
+nav img {
+    max-width: 5.4rem;
+    height: auto;
+}
+
+h1,
+h2,
+button,
+.bt-cadastre {
+    font-weight: 700;
+
+}
+
+input, 
+select,
+select#tipo, 
+select#campeonato,
+select#kartodromo,
+select.selecao {
+    /* depois por o tamnaho - "width" */
+    border: solid;
+    border-width: 2px;
+    border-radius: 14px;
+    border-color: var(--color-button);
+    width: 24rem;
+    padding: 1.3rem;
+    background: var(--background-campos);
+    outline: none;
+    box-sizing: border-box;
+    color: var(--text-base-light);
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-button);
+}
+
+input[type="radio"]:checked::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--color-button);
+    margin: -1rem;
+}
+
+label {
+    color: var(--text-base-light);
+}
+
+li {
+    list-style: none;
+    /*tira a polinha do topico da 'li'*/
+}
+
+a {
+    color: var(--text-base-light);
+    text-decoration: none;
+
+}
+
+button,
+.bt-cadastre {
+    display: block;
+    padding: 1.3rem;
+    width: 24rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    background-color: var(--color-button);
+    color: var(--text-base-light);
+    font-family: var(--fonte-title);
+    cursor: pointer;
+    /*tive que colocar aqui também pq não estava pegando a fonte*/
+}
+
+.header {
+    background: var(--background-navbar);
+    padding-inline: 1rem;
+    /*representa o lado direito e esquerdo*/
+}
+
+/* NAVBAR */
+.nav {
+    max-width: 1280rem;
+    height: 5rem;
+    /*altura*/
+    margin-inline: auto;
+    /*representa o lado direito e esquerdo*/
+    display: flex;
+    /*elemento fica um do lado do outro*/
+    justify-content: space-between;
+    /*dá um espaço entre os elementos*/
+    align-items: center;
+    /*alinhar os elementos horizontalmente ao centro*/
+    position: relative;
+    z-index: 5555;
+    background-color: var(--background-navbar);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    /*dá um espaçamento entre cada item flex*/
+    list-style: none;
+    /*tira a polinha do topico da 'li'*/
+}
+
+/* estamnos falando com cada link individualmente */
+.nav-list a {
+    padding: .5rem;
+    font-size: 1.3rem;
+    color: #fff;
+    /*por a variavel depois*/
+    padding-block: 16px;
+    /*espaçamento entre o topo e em baixo*/
+    opacity: 1;
+}
+
+/* dropdown corrida */
+ul.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--background-navbar);
+    margin-block: 1rem;
+    width: 12.9rem;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3.5rem;
+    border-radius: 0 0 14px 14px;
+    margin-inline: -3rem;
+}
+
+/* quando a corrida estiver ativa -> js */
+.drop-down.active ul.dropdown-menu {
+    display: flex;
+
+}
+
+/* MENU HAMBURGER  */
+.hamburger{
+    display: none;
+    border: none;
+    width: 3rem;
+    padding: 0px;
+    background: none;
+    border-top: .3rem solid var(--color-menu);
+    border-radius: 0;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 5556;
+}
+
+div#bt-go-back {
+    display: none;
+}
+
+/* BARRA DE ROLAGEM */
+::-webkit-scrollbar{
+    width: 20px;
+    background-color: var(--background-campos);   
+}
+::-webkit-scrollbar-thumb{
+    width: 15px;
+    border-radius: 10px;
+    background-color: var(--background-cards);
+
+}
+
+
+/* ONDAS */
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+}
+
+
+/* animação das ondas no footer */
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(0.50, 0.5, 0.40, 0.5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 14s;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/* conteúdo do footer */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    color: var(--text-base-light);
+    text-align: center;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    background-color: var(--background-campos);
+}
+
+.logos {
+    display: flex;
+    margin-left: 2rem;
+    gap: 3rem;
+}
+.logSistema, .logManas {
+    display: flex;
+    flex-direction: column;
+}
+
+.logos span {
+    margin-bottom: -7rem;
+}
+
+/* TAMANHO DAS LOGOS */
+img.logo.logoSistema {
+    max-width: 90px;
+}
+
+img.logo.logoManasC {
+    max-width: 117px;
+}
+
+.copyright {
+    height: 61px;
+    font-size: 1.3rem;
+}
+
+.copyright, .navegation {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.navegation {
+    display: flex;
+    height: 61px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.copyright, .navigationLink {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.navigationLink {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* logos insta/whats */
+.contact {
+    font-size: 2.3rem;
+}
+
+.containerAcesso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;  
+    padding: 20px;
+    height: 100%;
+    margin: 0;
+}
+
+.containerAcesso p {
+    margin-top: 0;
+}
+
+.containerAcesso h1 {
+    margin-top: 3rem;
+}
+
+
+/* MENU RESPONSIVO */
+/* NAVBAR */
+@media(max-width: 700px) {
+    div#bt-go-back {
+        display: flex;
+        font-size: 2rem;
+        padding: 1rem;
+    }
+  
+    .hamburger {
+        display: block;
+    }
+
+    /* TAG UL DA NAV */
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        list-style: none;
+        /*tira a polinha do topico da 'li'*/
+        background: var(--background-navbar);
+        transform: translateX(100%);
+        transition: transform 0.5s ease-out;
+        /*transição de 4 segundo e ease-out para a animação  tenha uma saida suave*/
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        overflow-y: auto;
+        z-index: 5555;
+    }
+
+    /* PARA FAZER OS DOIS TRAÇOS DO MENU */
+    .hamburger::after,
+    .hamburger::before {
+        content: " ";
+        display: block;
+        width: 30px;
+        /*largura*/
+        height: 3px;
+        background: var(--color-menu);
+        margin-top: 5px;
+        position: relative;
+        transition: 0.3s;
+        z-index: 5556;
+    }
+
+    /*Estilos ativos - aanimação que conecta com o js*/
+    .nav.active .nav-list {
+        transform: translateX(0%);
+    }
+
+    /* estamnos falando com cada link individualmente */
+    .nav-list a {
+        font-size: 2.3rem;
+        color: #fff;
+        /*var(--text-base-light);*/
+        padding-inline: 5px;
+        /*espaçamento entre o topo e em baixo*/
+        opacity: 0;
+    }
+
+    /* animando as li's da nav */
+    .nav-list li:nth-child(1) a {
+        transition: 0.5s 0.2s;
+        transform: translateX(-100%);
+        /* Movendo para a direita */
+    }
+
+    .nav-list li:nth-child(2) a {
+        transition: 0.5s 0.4s;
+        transform: translateX(-100%);
+        /* Movendo para a direita */
+    }
+
+    .nav-list li:nth-child(3) a {
+        transition: 0.5s 0.6s;
+        transform: translateX(-100%);
+        /* Movendo para a direita */
+    }
+
+    .nav.active .nav-list a {
+        opacity: 1;
+        transform: translate(0%);
+        /* Movendo de volta para a posição original */
+    }
+
+    /* ANIMANDO MENU HAMBURGER PARA 'X' QUANDO ATIVO */
+    .nav.active .hamburger {
+        position: fixed;
+        top: 21px;
+        right: 10px;
+        border-top-color: transparent;
+    }
+
+    .nav.active .hamburger::before {
+        transform: rotate(136deg);
+        /*rotacionar o traço em 136 graus*/
+    }
+
+    .nav.active .hamburger::after {
+        transform: rotate(-136deg);
+        /*rotacionar o traço em 136 graus*/
+        top: -7px;
+    }
+
+    ul.dropdown-menu {
+        width: 15.9rem;
+        position: static;
+        margin-inline: 1rem;
+        border-radius: 14px;
+        background: none;
+    }
+
+    .drop-down {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .dropdown-menu a {
+        display: flex;
+        height: 4rem;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .drop-down.active .dropdown-toggle { 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center
+    }   
+}
+
+/* FOOTER */
+@media (min-width: 375px){
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-around; 
+    }
+
+    .content span {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 425px){
+
+    .content span {
+        font-size: 1.7rem;
+    }
+
+    .content .navegation {
+        font-size: 1.7rem;
+    }
+}
+
+@media (min-width: 768px){
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+  
+    }
+
+    .content span {
+        height: 100px;
+    }
+}

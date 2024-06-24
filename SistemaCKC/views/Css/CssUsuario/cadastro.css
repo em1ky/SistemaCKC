@@ -1,0 +1,121 @@
+/* Background img */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 242vh;
+    background-image: url(/sistemackc/views/Img/ImgTelas/cadastroUsuario.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    opacity: 0.5; 
+    filter: grayscale(100%) brightness(10%);
+    z-index: -1;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.titulo{    
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.container-feedback {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.ph-warning-circle,
+.ph-check-square {
+    margin: 0.5rem;
+}
+
+.sucesso {
+    color: #00ff22b9;
+}
+
+.erro {
+    color: #ff0000b9;
+}
+
+div.campo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+}
+
+.genero{
+    width: 100%;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+}
+
+.escolha{
+    display: flex;
+    flex-direction: row;
+}
+
+.bt-cadastrar{
+    width: 24rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+button.bt-cadastrar:disabled {
+    color:#00000060;
+    background-color: #8b8787;
+    cursor: not-allowed;
+}
+
+@media screen and (min-width: 425px) {
+   .campo input, select, select#tipo{
+        width: 28rem;
+   }
+
+   div.campo{
+        margin-top: 3rem;
+   }
+
+   .bt-cadastrar{
+        width: 28rem;
+   }
+   .background-image {
+        height: 185vh;
+   }
+}
+
+@media screen and (min-width: 768px) {
+    .div_container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem 8rem;
+    }
+
+    .button-container{
+        display: flex;
+        justify-content: center;
+    } 
+    .background-image {
+        height: 184vh;
+   }
+}
+
+@media screen and (min-width: 1024px) {
+    .div_container{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 2rem 6rem;
+    }   
+    .background-image {
+        height: 50em;
+    } 
+}

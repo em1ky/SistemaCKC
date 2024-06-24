@@ -1,0 +1,200 @@
+
+body{
+    background-color: var(--bacground-adm);
+    font-size: 1.6rem;
+    color: var(--text-adm-black);
+    font-weight: 400;
+
+}
+main{
+    margin: 2rem;
+}
+.contrainer{
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+h1.title{
+    display: flex;
+    margin-top: 7rem;
+    font-size: 4rem;
+    font-weight: 700;
+    justify-content: center;
+}
+p.subTititulo{
+    display: flex;
+    margin-top: 1rem;
+    font-size: 2rem;
+    justify-content: center;
+    font-weight: 400;
+}
+
+/* Botão de cadastrar novo usuário */
+.bt-cadastrar,.bt-cadastrar-camp, .bt-cadastrar-kart {
+    display: block;
+    padding: 1.3rem;
+    width: 20rem;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    font-family: var(--fonte-title);
+    color: var(--text-base-light);
+    background-color: var(--color-button);
+    cursor: pointer;
+}
+.bt-cadastrar:hover, 
+button.bt_filtrar:hover{
+    font-weight: 500;
+    border: .1rem solid;
+    text-decoration: none;
+    background-color: white;
+    color: var(--color-button);
+}
+/* crud campeonato e crud kartodromo*/
+.bt-cadastrar-camp, .bt-cadastrar-kart{
+    display: flex;
+    width: 25rem;
+}
+
+
+form{
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+
+.filtro{
+    display: flex;
+    align-items: end;
+    gap: 4rem;   
+    flex-wrap: wrap; 
+}
+.filtro label{
+    font-weight: 500;
+    color: black;
+}
+
+input, select.busca_User,
+ select.busca_data{
+    width: 40rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: white;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+    color: black;
+    letter-spacing: 1.2px;
+}
+.filtro_nome, .filtro_user{
+    display: flex;
+    flex-direction: column;
+}
+
+select.busca_User, select.busca_data{
+    width: 30rem;
+    padding: 1.3rem;
+}
+select.busca_data, input.busca_data{
+    width: 15rem;
+
+}
+
+select option{
+    height: 1rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+    background-color: rgb(220, 220, 220);
+}
+
+
+button.bt_filtrar, .bt-editar, .bt-excluir{
+    width: 12rem;
+}
+
+div.tabela {
+    border: solid;
+    border-radius: 30px;
+    border-color: transparent;
+    max-width: 100%;
+    overflow-x: auto;
+}
+table.tabela-conteudo {
+    border-collapse: collapse;
+    background: var(--background-tabelas-adm);
+    border-radius: 20px;
+}
+th, td{
+    padding: 20px;
+    width: 20%;
+    text-align: center;
+}
+td.acoes, th{
+    background-color: var(--tabelas-colunas-adm);
+    font-size: 1.8rem;
+    padding: 14px;
+}
+
+.icos {
+    display: flex;
+    margin-left: -2rem;
+    flex-direction: row;
+    justify-content: space-around;
+}
+/* bt de exibir resultados */
+i.ph-bold.ph-list-magnifying-glass {
+    color: #CC5918;
+}
+/* bt de cadastra resultados */
+i.ph-bold.ph-plus-square {
+    color: #069B0C;
+}
+
+/* bt de redes em crud kartodromos */
+a.links {
+    display: flex;
+    height: 38px;
+    width: 150px;
+    color: black;
+    cursor: pointer;
+    font-weight: 600;
+    align-items: center;
+    border: solid transparent;
+    border-radius: 35px;
+    justify-content: center;
+    background: #85A3F8;
+}
+
+.bt-editar{
+    width: 0;
+    color: blue;
+    font-size: 3rem;
+}
+.bt-excluir, .btModal {
+    padding: 0;
+    font-size: 3rem;
+    width: 0;
+    border-radius: 0;
+    color: red;
+    background-color: transparent;
+}
+.icon-plus {
+    margin-left: 3rem;
+}
+.btModal {
+    color: blue;
+
+}
+.modal{
+    display: none;
+}
+.copyright{
+    font-weight: 100;
+}
+
+

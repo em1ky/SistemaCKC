@@ -1,0 +1,129 @@
+/* Background img */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95em;
+    background-image: url(/sistemackc/views/Img/ImgTelas/kartodromoUsuario.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    opacity: 0.5; 
+    filter: grayscale(100%) brightness(10%);
+    z-index: -1;
+}
+
+.titulo {
+    margin: 3rem auto;
+    display: block; 
+    text-align: center;
+    color: var(--text-base-light);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    padding: 2rem;
+    gap: 50px;
+    align-items: center;
+}
+
+.card {
+    background-color: var(--background-campos);
+    border: 2px solid var(--color-button);
+    border-radius: 14px;
+    max-width: 280px;
+    height: 600px;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.subTitulo{
+    font-size: 2rem;
+}
+
+.nomeKartodromo {
+    margin: 1.5rem 0;
+    height: 100px;
+    word-wrap: break-word;
+    overflow-y: auto;
+}
+
+.fundoImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    margin: 2rem 0;
+    background-color: var(--text-base-light);
+    width: 100%;
+    height: 220px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.imgKartodromo {
+    width: 100%;
+}
+
+.infoLocalizacao {
+    margin: 30px 0;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bt-siteKartodromo,
+.bt-comoChegar {
+    padding: 1rem;
+    border-radius: 14px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: var(--color-button);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bt-siteKartodromo:hover,
+.bt-comoChegar:hover {
+    color: var(--background-campos);
+    background-color: var(--text-base-light);
+}
+
+@media (min-width: 375px) {
+    .card {
+        height: 600px;
+        max-width: 335px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .card {
+        height: 620px;
+    }
+
+    .infoLocalizacao {
+        height: 100px;
+        word-wrap: break-word;
+        overflow-y: auto;
+    }
+
+    .background-image {
+        height: 55em;
+    }
+}
+
+@media (min-width: 1440px) {
+    .background-image {
+        height: 55em;
+    }
+}
